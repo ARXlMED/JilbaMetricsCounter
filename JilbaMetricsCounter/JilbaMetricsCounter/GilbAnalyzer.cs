@@ -221,9 +221,9 @@ namespace JilbaMetricsCounter
 
         static void ParseLoop(int lvl)
         {
-            R.CL++;
+            //R.CL++;
             R.Trace.Add($"loop на уровне {lvl}: CL = {R.CL}");
-            if (lvl > maxLevel) maxLevel = lvl;
+            //if (lvl > maxLevel) maxLevel = lvl;
             R.N++;
 
             pos++;
@@ -231,7 +231,7 @@ namespace JilbaMetricsCounter
             if (pos < T.Count && T[pos].Value == "{")
             {
                 pos++;
-                ParseBlock(lvl + 1);
+                ParseBlock(lvl);
             }
         }
 
